@@ -422,9 +422,6 @@ button {
   display: flex;
   align-items: center;
   text-decoration: none;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .logo-img {
@@ -1318,6 +1315,12 @@ button {
     grid-column: 3;
     max-width: none;
     padding: 0;
+  }
+
+  .logo-box {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
