@@ -835,7 +835,7 @@ button {
 .grid-2 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 11px;
+  gap: 2.25rem;
   min-width: 0;
 }
 
@@ -1429,7 +1429,7 @@ button {
     padding-right: 6vw;
     padding-top: clamp(2rem, 7vw, 2.9rem);
     padding-bottom: clamp(2.2rem, 7.2vw, 3.2rem);
-    gap: clamp(1.05rem, 4vw, 1.5rem);
+    gap: clamp(2.25rem, 6vw, 3.25rem);
   }
 
   .split-content {
