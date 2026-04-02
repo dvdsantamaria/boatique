@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boatique Marine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Nunito+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <div class="nav-links">
+        <a href="./about.html" class="nav-link" data-page="about">About</a>
+        <a href="./services.html" class="nav-link" data-page="services">Services</a>
+        <a href="./contact.html" class="nav-link" data-page="contact">Contact</a>
+      </div>
+      <a href="./index.html" class="logo-box flex-shrink-0">
+        <img src="./images/logo-white.png" alt="Boatique Marine" class="logo-img">
+      </a>
+      <div class="nav-spacer"></div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Menu">
+        <div class="burger-box">
+          <div class="burger-inner">
+            <span class="burger-line top"></span>
+            <span class="burger-line bottom"></span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Full Screen Mobile Menu -->
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+      <a href="./about.html" class="mobile-nav-link" data-page="about">About</a>
+      <a href="./services.html" class="mobile-nav-link" data-page="services">Services</a>
+      <a href="./contact.html" class="mobile-nav-link" data-page="contact">Contact</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section with Video Background -->
+    <section class="hero">
+      <div class="hero-video-container" id="hero-bg">
+        <video autoplay muted loop playsinline poster="./images/hero-yacht.jpg">
+          <source src="./images/sydneyharbour.mp4" type="video/mp4">
+        </video>
+        <img src="./images/hero-yacht.jpg" alt="Luxury Yacht" class="hero-fallback-img">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title" id="hero-title">Navigate Luxury Yachting with Proven Expertise</h1>
+        <a href="#services" class="hero-btn" id="hero-btn">See More</a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-white">
+      <div class="container">
+        <div class="animate-on-scroll" data-animate="fade-in-up">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl text-blue mb-12 md:mb-16">Services we offer</h2>
+        </div>
+
+        <div class="grid-2 md:grid-cols-2 gap-8 md:gap-12">
+          <!-- Yacht Consulting -->
+          <div class="animate-on-scroll" data-animate="slide-in-left" data-delay="100">
+            <div class="group">
+              <div class="group-img mb-6">
+                <img src="./images/yacht-aerial.jpg" alt="Yacht Consulting" class="aspect-locked">
+              </div>
+              <h3 class="text-xl md:text-2xl text-dark mb-4">Yacht Consulting</h3>
+              <p class="text-dark-80 text-sm md:text-base leading-relaxed">
+                Every vessel owner has unique goals, and we help turn those goals into reality.
+                With the right advice, we save you time and simplify the complex process of
+                purchasing, maintaining or selling a vessel—covering logistics, legal, and compliance.
+                Our consulting services include owner representation, maritime surveys, legal support,
+                pre-purchase inspections, valuation studies, project management, safety consultation,
+                import/export logistics, yacht transport, maintenance program setup and crew sourcing.
+              </p>
+              <p class="mt-4 text-lg md:text-xl font-normal text-dark">There is no substitute to experience</p>
+              <a href="./contact.html" class="btn mt-6">Contact Us</a>
+            </div>
+          </div>
+
+          <!-- Filippetti Yachts -->
+          <div class="animate-on-scroll" data-animate="slide-in-right" data-delay="200">
+            <div class="group">
+              <div class="group-img mb-6">
+                <img
+                  src="https://images.squarespace-cdn.com/content/v1/67eb79162356601b6c110380/c54f4ecd-a3d8-4d1a-b6d7-13546ae49e25/Screenshot+2025-04-11+at+3.57.05%E2%80%AFPM.png?format=2500w"
+                  alt="Filippetti Yachts" class="aspect-locked">
+              </div>
+              <h3 class="text-xl md:text-2xl text-dark mb-2">Filippetti Yachts Ambassador</h3>
+              <p class="text-lg md:text-xl font-normal text-dark mb-4">Sales and commercial contact for the Australian
+                region</p>
+              <p class="text-dark-80 text-sm md:text-base leading-relaxed">
+                We are the direct contact for the Filippetti Yachts Shipyard in Mondolfo, Italy,
+                supporting owners, agents and buyers in Australia. With a history of importing,
+                maintaining and managing Filippetti vessels locally, we handle sales, warranty support,
+                maintenance programs and part sourcing. Founded in 2009 and rooted in over 40 years
+                of Italian superyacht building, the Filippetti yard blends luxury craftsmanship,
+                performance, and customisation, with award-winning designers working closely with
+                clients to bring their nautical visions to life.
+              </p>
+              <a href="https://filippettiyachts.com/" target="_blank" rel="noopener noreferrer" class="btn mt-6">Visit
+                Them</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Empower Section -->
+    <section class="section-empower">
+      <div class="absolute inset-0">
+        <img src="./images/empower-yacht.jpg" alt="Yacht Cruising" class="w-full h-full img-cover">
+        <div class="absolute inset-0 hero-overlay-light"></div>
+      </div>
+      <div class="relative z-10 flex items-center justify-center px-4">
+        <div class="animate-on-scroll" data-animate="fade-in">
+          <h2 class="text-white text-2xl md:text-4xl lg:text-5xl font-medium text-center tracking-tight">Empower Your
+            Yachting Journey with Trusted Expertise</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guiding Principles Section -->
+    <section class="section-split">
+      <!-- Left: Image fills the left half edge-to-edge -->
+      <div class="split-img animate-on-scroll" data-animate="slide-in-left">
+        <img src="./images/guiding-val.jpg" alt="Our Guiding Principles">
+      </div>
+
+      <!-- Right: Text Content -->
+      <div class="split-content animate-on-scroll" data-animate="slide-in-right" data-delay="100">
+        <h2 class="split-heading text-blue">Our guiding<br> principles</h2>
+        <p class="split-body">
+          At Boatique Marine, decades of global yachting experience converge to deliver
+          refined, client-focused solutions. Our deep industry ties and on-water expertise
+          position us as trusted advisors in the luxury superyacht world.
+        </p>
+        <p class="split-body">
+          From management and maintenance to brokerage and consulting, we deliver thoughtful,
+          high-level service that reflects a genuine passion for life at sea.
+        </p>
+        <a href="./about.html" class="btn-pill">LEARN MORE</a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="grid-2 md:grid-cols-2 gap-8 md:gap-16">
+          <div class="animate-on-scroll" data-animate="slide-in-left">
+            <div>
+              <h2 class="text-3xl md:text-4xl lg:text-5xl text-blue mb-6">Contact Us</h2>
+              <p class="text-dark-80 text-sm md:text-base leading-relaxed">
+                Interested in working together? Please share a few details below, and we will
+                be in touch shortly. We look forward to connecting with you.
+              </p>
+            </div>
+          </div>
+
+          <div class="animate-on-scroll" data-animate="slide-in-right" data-delay="100">
+            <form action="https://submit-form.com/A84xqqQsT" class="space-y-6">
+              <div>
+                <label class="block text-sm text-dark mb-2">Name</label>
+                <div class="grid grid-cols-2 gap-4">
+                  <input type="text" name="firstName" placeholder="First Name (required)" required class="form-input">
+                  <input type="text" name="lastName" placeholder="Last Name (required)" required class="form-input">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm text-dark mb-2">Email (required)</label>
+                <input type="email" name="email" required class="form-input">
+              </div>
+
+              <div>
+                <label class="block text-sm text-dark mb-2">Message (required)</label>
+                <textarea name="message" required rows="4" class="form-textarea"></textarea>
+              </div>
+
+              <button type="submit" class="btn">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid-2 md:grid-cols-3 gap-8 md:gap-12">
+        <div class="animate-on-scroll" data-animate="fade-in-up">
+          <h3 class="footer-tagline">Precision. Passion. Legacy.</h3>
+        </div>
+        <div class="animate-on-scroll" data-animate="fade-in-up" data-delay="100">
+          <h4 class="footer-heading">Location</h4>
+          <p class="footer-text">Mosman 2088,<br>Sydney, Australia</p>
+        </div>
+        <div class="animate-on-scroll" data-animate="fade-in-up" data-delay="200">
+          <h4 class="footer-heading">Contact</h4>
+          <div class="footer-text">
+            <p>Sean Bennett</p>
+            <a href="mailto:info@boatiquemarine.com" class="footer-link">info@boatiquemarine.com</a>
+            <p class="mt-1">+61 (0) 417 234 811</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="text-sm text-dark-60">Developed by <a href="https://doopux.com" target="_blank"
+            rel="noopener noreferrer" class="footer-link">Doopux.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

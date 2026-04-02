@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Boatique Marine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <div class="nav-links">
+        <a href="./about.html" class="nav-link active" data-page="about">About</a>
+        <a href="./services.html" class="nav-link" data-page="services">Services</a>
+        <a href="./contact.html" class="nav-link" data-page="contact">Contact</a>
+      </div>
+      <a href="./index.html" class="logo-box flex-shrink-0">
+        <img src="./images/logo-white.png" alt="Boatique Marine" class="logo-img">
+      </a>
+      <div class="nav-spacer"></div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Menu">
+        <div class="burger-box">
+          <div class="burger-inner">
+            <span class="burger-line top"></span>
+            <span class="burger-line bottom"></span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Full Screen Mobile Menu -->
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+      <a href="./about.html" class="mobile-nav-link active" data-page="about">About</a>
+      <a href="./services.html" class="mobile-nav-link" data-page="services">Services</a>
+      <a href="./contact.html" class="mobile-nav-link" data-page="contact">Contact</a>
+    </div>
+  </div>
+
+  <main style="padding-top: 100px;">
+    <!-- About Section -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="grid-2 md:grid-cols-2 gap-8 md:gap-16 items-start">
+          <div class="animate-on-scroll" data-animate="slide-in-left">
+            <div>
+              <h1 class="text-3xl md:text-4xl lg:text-5xl text-blue mb-8">A bit about us</h1>
+              <div class="space-y-6 text-dark-80 text-sm md:text-base leading-relaxed">
+                <p>
+                  Boatique Marine brings together extensive knowledge and contacts that can only 
+                  be gained through decades of experience, dating back to the America's Cup held 
+                  in Fremantle, Western Australia, in 1987. Our journey in the yachting world has 
+                  been built on firsthand exposure to the industry's evolution, and our roots are 
+                  deeply embedded in both local and international maritime culture.
+                </p>
+                <p>
+                  Our team's expertise spans on-water qualifications and practical experience as 
+                  Captains, Engineers, and Consultants, having worked extensively with sailing and 
+                  motor vessels ranging in sizes from 15m to 90m. We've operated across Europe, the 
+                  Caribbean, Asia, the South Pacific, and Australia crossing major oceans, managing 
+                  long-range cruising, and attending prestigious boat shows such as Monaco, Cannes, 
+                  and Fort Lauderdale as buyers' representatives. Along the way, we've built solid 
+                  relationships with build yards, owners, and brokers, and developed a deep understanding 
+                  of the complex relationship between a yacht and its owner.
+                </p>
+                <p>
+                  Boatique Marine is a yacht specialist dedicated to facilitating luxury superyacht 
+                  lifestyles and solutions. We connect owners, buyers, sellers, build yards, and 
+                  brokers across the globe, offering bespoke yacht management and maintenance services 
+                  tailored to the highest standards of discretion and detail. Whether you seek advice 
+                  on your current vessel, plan to purchase, or simply need insights into the industry, 
+                  we're here to help—and if we don't have the answer, we'll connect you with someone 
+                  who does. Reach out to tap into our passion and expertise for all things yachting.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="animate-on-scroll" data-animate="slide-in-right" data-delay="100">
+            <div class="overflow-hidden">
+              <img src="./images/yacht-shipyard.jpg" alt="Yacht in Shipyard" class="img-cover h-80 md:h-[600px]">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="section bg-accent">
+      <div class="container">
+        <div class="animate-on-scroll" data-animate="fade-in-up">
+          <div class="grid-2 md:grid-cols-2 gap-8 md:gap-16">
+            <div>
+              <h2 class="text-2xl md:text-3xl lg:text-4xl text-dark mb-4">Contact us</h2>
+              <p class="text-dark-80 text-sm md:text-base">Like to know how we can help you with your floating goals?</p>
+            </div>
+
+            <div>
+              <p class="text-dark-80 text-sm md:text-base mb-6">Fill out some info and we will be in touch shortly</p>
+              <form action="https://submit-form.com/A84xqqQsT" class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                  <input type="text" name="firstName" placeholder="First Name (required)" required class="form-input form-input-dark">
+                  <input type="text" name="lastName" placeholder="Last Name (required)" required class="form-input form-input-dark">
+                </div>
+                <input type="email" name="email" placeholder="Email (required)" required class="form-input form-input-dark">
+                <div class="flex items-center gap-2">
+                  <input type="checkbox" name="newsletter" id="newsletter" class="checkbox">
+                  <label for="newsletter" class="text-sm text-dark-80">Sign up for news and updates</label>
+                </div>
+                <textarea name="message" placeholder="Message (required)" required rows="4" class="form-textarea form-textarea-dark"></textarea>
+                <button type="submit" class="btn">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid-2 md:grid-cols-3 gap-8 md:gap-12">
+        <div class="animate-on-scroll" data-animate="fade-in-up">
+          <h3 class="footer-tagline">Precision. Passion. Legacy.</h3>
+        </div>
+        <div class="animate-on-scroll" data-animate="fade-in-up" data-delay="100">
+          <h4 class="footer-heading">Location</h4>
+          <p class="footer-text">Mosman 2088,<br>Sydney, Australia</p>
+        </div>
+        <div class="animate-on-scroll" data-animate="fade-in-up" data-delay="200">
+          <h4 class="footer-heading">Contact</h4>
+          <div class="footer-text">
+            <p>Sean Bennett</p>
+            <a href="mailto:info@boatiquemarine.com" class="footer-link">info@boatiquemarine.com</a>
+            <p class="mt-1">+61 (0) 417 234 811</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="text-sm text-dark-60">Developed by <a href="https://doopux.com" target="_blank" rel="noopener noreferrer" class="footer-link">Doopux.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
