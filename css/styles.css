@@ -2,8 +2,6 @@
    Boatique Marine - Static Site Styles
    ======================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Nunito+Sans:wght@400;700&display=swap');
-
 :root {
   --color-primary: #1370af;
   --color-accent: #8eb5db;
@@ -20,8 +18,8 @@
   --btn-padding-x-mobile: 2.6rem;
   --btn-min-width: 17.7rem;
   --btn-min-width-mobile: 12.5rem;
-  --font-heading: 'Manrope', sans-serif;
-  --font-body: 'Nunito Sans', sans-serif;
+  --font-heading: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 *, *::before, *::after {
@@ -1157,6 +1155,21 @@ button {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+  .section-split {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .split-content {
+    width: 100%;
+    max-width: none;
+  }
+
+  .split-heading,
+  .split-body {
+    max-width: none;
+  }
+
   .nav-links {
     gap: 1.4rem;
   }
@@ -1226,6 +1239,17 @@ button {
   .hero-title {
     max-width: 24ch;
     line-height: 1.15;
+  }
+
+  .split-content {
+    width: 100%;
+    max-width: none;
+    padding-top: 0.75rem;
+  }
+
+  .split-heading,
+  .split-body {
+    max-width: none;
   }
 
   .footer {

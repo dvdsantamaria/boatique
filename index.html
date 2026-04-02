@@ -5,12 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boatique Marine</title>
+  <meta name="description" content="Boatique Marine offers yacht consulting, management and Filippetti Yachts representation across Australia.">
   <link rel="icon" type="image/webp" href="./images/favicon.webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Nunito+Sans:wght@400;700&display=swap"
-    rel="stylesheet">
+  <link rel="preload" as="image" type="image/webp" href="./images/hero-yacht-960.webp"
+    imagesrcset="./images/hero-yacht-960.webp 960w, ./images/hero-yacht-1600.webp 1436w" imagesizes="100vw">
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -24,7 +22,8 @@
         <a href="./contact.html" class="nav-link" data-page="contact">Contact</a>
       </div>
       <a href="./index.html" class="logo-box flex-shrink-0">
-        <img src="./images/logo-white.png" alt="Boatique Marine" class="logo-img">
+        <img src="./images/logo-white.webp" alt="Boatique Marine" class="logo-img" width="648" height="225"
+          decoding="async">
       </a>
       <div class="nav-actions">
         <a href="./contact.html" class="nav-cta">Contact Us</a>
@@ -53,10 +52,13 @@
     <!-- Hero Section with Video Background -->
     <section class="hero">
       <div class="hero-video-container" id="hero-bg">
-        <video autoplay muted loop playsinline poster="./images/hero-yacht.jpg">
-          <source src="./images/sydneyharbour.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline preload="none" poster="./images/hero-yacht-960.webp">
+          <source data-src="./images/sydneyharbour.mp4" type="video/mp4">
         </video>
-        <img src="./images/hero-yacht.jpg" alt="Luxury Yacht" class="hero-fallback-img">
+        <img src="./images/hero-yacht-960.webp"
+          srcset="./images/hero-yacht-960.webp 960w, ./images/hero-yacht-1600.webp 1436w" sizes="100vw"
+          alt="Luxury Yacht" class="hero-fallback-img" width="1436" height="1240" loading="eager"
+          fetchpriority="high">
         <div class="hero-overlay"></div>
       </div>
       <div class="hero-content">
@@ -77,7 +79,10 @@
           <div class="animate-on-scroll" data-animate="slide-in-left" data-delay="100">
             <div class="group">
               <div class="group-img mb-6">
-                <img src="./images/yacht-aerial.jpg" alt="Yacht Consulting" class="aspect-locked">
+                <img src="./images/yacht-aerial-700.webp"
+                  srcset="./images/yacht-aerial-700.webp 700w, ./images/yacht-aerial-1200.webp 1200w"
+                  sizes="(min-width: 768px) 46vw, 92vw" alt="Yacht Consulting" class="aspect-locked" width="1200"
+                  height="874" loading="lazy" decoding="async">
               </div>
               <h3 class="text-xl md:text-2xl text-dark mb-4">Yacht Consulting</h3>
               <p class="text-dark-80 text-sm md:text-base leading-relaxed">
@@ -97,9 +102,10 @@
           <div class="animate-on-scroll" data-animate="slide-in-right" data-delay="200">
             <div class="group">
               <div class="group-img mb-6">
-                <img
-                  src="https://images.squarespace-cdn.com/content/v1/67eb79162356601b6c110380/c54f4ecd-a3d8-4d1a-b6d7-13546ae49e25/Screenshot+2025-04-11+at+3.57.05%E2%80%AFPM.png?format=2500w"
-                  alt="Filippetti Yachts" class="aspect-locked">
+                <img src="./images/filippetti-ambassador-700.webp"
+                  srcset="./images/filippetti-ambassador-700.webp 700w, ./images/filippetti-ambassador-1200.webp 1200w"
+                  sizes="(min-width: 768px) 46vw, 92vw" alt="Filippetti Yachts" class="aspect-locked" width="1200"
+                  height="900" loading="lazy" decoding="async">
               </div>
               <h3 class="text-xl md:text-2xl text-dark mb-2">Filippetti Yachts Ambassador</h3>
               <p class="text-lg md:text-xl font-normal text-dark mb-4">Sales and commercial contact for the Australian
@@ -124,7 +130,10 @@
     <!-- Empower Section -->
     <section class="section-empower">
       <div class="absolute inset-0">
-        <img src="./images/empower-yacht.jpg" alt="Yacht Cruising" class="w-full h-full img-cover">
+        <img src="./images/empower-yacht-900.webp"
+          srcset="./images/empower-yacht-900.webp 900w, ./images/empower-yacht-1600.webp 1600w"
+          sizes="100vw" alt="Yacht Cruising" class="w-full h-full img-cover" width="1600" height="1200"
+          loading="lazy" decoding="async">
         <div class="absolute inset-0 hero-overlay-light"></div>
       </div>
       <div class="relative z-10 flex items-center justify-center px-4">
@@ -139,7 +148,10 @@
     <section class="section-split">
       <!-- Left: Image fills the left half edge-to-edge -->
       <div class="split-img animate-on-scroll" data-animate="slide-in-left">
-        <img src="./images/guiding-val.jpg" alt="Our Guiding Principles">
+        <img src="./images/guiding-val-800.webp"
+          srcset="./images/guiding-val-800.webp 800w, ./images/guiding-val-1400.webp 1400w"
+          sizes="(min-width: 1024px) 50vw, 100vw" alt="Our Guiding Principles" width="1400" height="933"
+          loading="lazy" decoding="async">
       </div>
 
       <!-- Right: Text Content -->
@@ -154,7 +166,7 @@
           From management and maintenance to brokerage and consulting, we deliver thoughtful,
           high-level service that reflects a genuine passion for life at sea.
         </p>
-        <a href="./about.html" class="btn-pill">LEARN MORE</a>
+        <a href="./about.html" class="btn-pill" aria-label="Learn more about Boatique Marine">LEARN MORE ABOUT US</a>
       </div>
     </section>
 

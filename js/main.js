@@ -119,35 +119,55 @@ document.addEventListener('DOMContentLoaded', function () {
   // Video error handling - show fallback image if video fails
   const heroVideo = document.querySelector('.hero-video-container video');
   if (heroVideo) {
-    heroVideo.loop = true;
-    heroVideo.muted = true;
-    heroVideo.playsInline = true;
+    const fallbackImg = heroVideo.parentElement.querySelector('.hero-fallback-img');
+    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isDesktopViewport = window.matchMedia('(min-width: 1024px)').matches;
+    const hasDataSaver = !!(connection && connection.saveData);
+    const slowConnection = !!(connection && /(^|-)2g$/.test(connection.effectiveType || ''));
+    const shouldLoadVideo = isDesktopViewport && !prefersReducedMotion && !hasDataSaver && !slowConnection;
 
-    const playHeroVideo = () => {
-      const playPromise = heroVideo.play();
-      if (playPromise && typeof playPromise.catch === 'function') {
-        playPromise.catch(() => {
-          // Some browsers block autoplay until user interaction.
-          // Keep video element available and only fallback on real load error.
-        });
-      }
-    };
-
-    heroVideo.addEventListener('error', function() {
-      this.style.display = 'none';
-      const fallbackImg = this.parentElement.querySelector('.hero-fallback-img');
+    if (!shouldLoadVideo) {
+      heroVideo.style.display = 'none';
       if (fallbackImg) {
         fallbackImg.style.display = 'block';
       }
-    });
+    } else {
+      const videoSource = heroVideo.querySelector('source[data-src]');
+      if (videoSource && !videoSource.src) {
+        videoSource.src = videoSource.dataset.src;
+        heroVideo.load();
+      }
 
-    heroVideo.addEventListener('loadeddata', playHeroVideo);
-    heroVideo.addEventListener('ended', function() {
-      this.currentTime = 0;
+      heroVideo.loop = true;
+      heroVideo.muted = true;
+      heroVideo.playsInline = true;
+
+      const playHeroVideo = () => {
+        const playPromise = heroVideo.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(() => {
+            // Some browsers block autoplay until user interaction.
+            // Keep video element available and only fallback on real load error.
+          });
+        }
+      };
+
+      heroVideo.addEventListener('error', function() {
+        this.style.display = 'none';
+        if (fallbackImg) {
+          fallbackImg.style.display = 'block';
+        }
+      });
+
+      heroVideo.addEventListener('loadeddata', playHeroVideo);
+      heroVideo.addEventListener('ended', function() {
+        this.currentTime = 0;
+        playHeroVideo();
+      });
+
       playHeroVideo();
-    });
-
-    playHeroVideo();
+    }
   }
 
   // Handle Formspark submissions with Toast
