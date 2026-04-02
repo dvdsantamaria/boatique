@@ -531,7 +531,7 @@ button {
   font-family: var(--font-heading);
   font-size: 2rem;
   font-weight: 500;
-  color: #ffffff;
+  color: var(--color-accent);
   text-decoration: none;
   position: relative;
   opacity: 0.8;
@@ -544,7 +544,7 @@ button {
 
 .mobile-nav a.active {
   opacity: 1;
-  color: #8eb5db;
+  color: #ffffff;
 }
 
 /* ========================================
