@@ -109,15 +109,23 @@
               <p class="text-dark-80 text-sm md:text-base mb-6">Fill out some info and we will be in touch shortly</p>
               <form action="https://submit-form.com/A84xqqQsT" class="space-y-4">
                 <div class="grid grid-cols-2 gap-4">
-                  <input type="text" name="firstName" placeholder="First Name (required)" required class="form-input form-input-dark">
-                  <input type="text" name="lastName" placeholder="Last Name (required)" required class="form-input form-input-dark">
+                  <label for="about-first-name" class="sr-only">First name</label>
+                  <input id="about-first-name" type="text" name="firstName" placeholder="First Name (required)"
+                    required class="form-input form-input-dark">
+                  <label for="about-last-name" class="sr-only">Last name</label>
+                  <input id="about-last-name" type="text" name="lastName" placeholder="Last Name (required)" required
+                    class="form-input form-input-dark">
                 </div>
-                <input type="email" name="email" placeholder="Email (required)" required class="form-input form-input-dark">
+                <label for="about-email" class="sr-only">Email</label>
+                <input id="about-email" type="email" name="email" placeholder="Email (required)" required
+                  class="form-input form-input-dark">
                 <div class="flex items-center gap-2">
-                  <input type="checkbox" name="newsletter" id="newsletter" class="checkbox">
-                  <label for="newsletter" class="text-sm text-dark-80">Sign up for news and updates</label>
+                  <input type="checkbox" name="newsletter" id="about-newsletter" class="checkbox">
+                  <label for="about-newsletter" class="text-sm text-dark-80">Sign up for news and updates</label>
                 </div>
-                <textarea name="message" placeholder="Message (required)" required rows="4" class="form-textarea form-textarea-dark"></textarea>
+                <label for="about-message" class="sr-only">Message</label>
+                <textarea id="about-message" name="message" placeholder="Message (required)" required rows="4"
+                  class="form-textarea form-textarea-dark"></textarea>
                 <button type="submit" class="btn">Submit</button>
               </form>
             </div>

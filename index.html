@@ -54,6 +54,8 @@
       <div class="hero-video-container" id="hero-bg">
         <video autoplay muted loop playsinline preload="none" poster="./images/hero-yacht-960.webp">
           <source data-src="./images/sydneyharbour.mp4" type="video/mp4">
+          <track kind="captions" srclang="en" label="English captions" src="./images/sydneyharbour-captions.vtt"
+            default>
         </video>
         <img src="./images/hero-yacht-960.webp"
           srcset="./images/hero-yacht-960.webp 960w, ./images/hero-yacht-1600.webp 1436w" sizes="100vw"
@@ -189,19 +191,23 @@
               <div>
                 <label class="block text-sm text-dark mb-2">Name</label>
                 <div class="grid grid-cols-2 gap-4">
-                  <input type="text" name="firstName" placeholder="First Name (required)" required class="form-input">
-                  <input type="text" name="lastName" placeholder="Last Name (required)" required class="form-input">
+                  <label for="index-first-name" class="sr-only">First name</label>
+                  <input id="index-first-name" type="text" name="firstName" placeholder="First Name (required)"
+                    required class="form-input">
+                  <label for="index-last-name" class="sr-only">Last name</label>
+                  <input id="index-last-name" type="text" name="lastName" placeholder="Last Name (required)" required
+                    class="form-input">
                 </div>
               </div>
 
               <div>
-                <label class="block text-sm text-dark mb-2">Email (required)</label>
-                <input type="email" name="email" required class="form-input">
+                <label for="index-email" class="block text-sm text-dark mb-2">Email (required)</label>
+                <input id="index-email" type="email" name="email" required class="form-input">
               </div>
 
               <div>
-                <label class="block text-sm text-dark mb-2">Message (required)</label>
-                <textarea name="message" required rows="4" class="form-textarea"></textarea>
+                <label for="index-message" class="block text-sm text-dark mb-2">Message (required)</label>
+                <textarea id="index-message" name="message" required rows="4" class="form-textarea"></textarea>
               </div>
 
               <button type="submit" class="btn">Send</button>

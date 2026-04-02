@@ -96,6 +96,17 @@ button {
 .block { display: block; }
 .inline-block { display: inline-block; }
 .hidden { display: none; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 .flex-col { flex-direction: column; }
 .items-center { align-items: center; }
@@ -371,7 +382,7 @@ button {
   min-height: 2.4rem;
   padding: 0 1.2rem;
   border-radius: 9999px;
-  background-color: var(--color-accent);
+  background-color: #ffffff;
   color: #111111;
   font-family: var(--font-body);
   font-size: 0.75rem;
@@ -384,7 +395,7 @@ button {
 }
 
 .nav-cta:hover {
-  background-color: #ffffff;
+  background-color: var(--color-accent);
   color: #111111;
   transform: translateY(-1px);
 }
@@ -1002,7 +1013,7 @@ button {
   font-family: var(--font-body);
   font-size: clamp(1.05rem, 1vw, 1.5rem);
   line-height: 1.2;
-  color: var(--color-primary);
+  color: #0f2e4d;
 }
 
 .footer-bottom .footer-link {
