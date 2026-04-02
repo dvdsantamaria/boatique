@@ -753,10 +753,10 @@ button {
 .section-split {
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: clamp(1.25rem, 3.2vw, 2.25rem);
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 3vw clamp(40px, 5vw, 78px);
+  padding: clamp(2.5rem, 4.6vw, 4.5rem) 3vw clamp(2.6rem, 5vw, 4.875rem);
   background-color: #DAE1E3;
 }
 
@@ -783,6 +783,8 @@ button {
   justify-content: center;
   padding: 0;
   background-color: #DAE1E3;
+  width: 100%;
+  max-width: min(36rem, 100%);
 }
 
 .split-heading {
@@ -792,15 +794,19 @@ button {
   line-height: 1.06;
   letter-spacing: -0.02em;
   color: var(--color-primary);
-  margin-bottom: 1rem;
+  margin-bottom: clamp(1.1rem, 1.8vw, 1.8rem);
 }
 
 .split-body {
   font-size: 1rem;
   line-height: 1.5;
   color: rgba(17, 17, 17, 0.85);
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   max-width: none;
+}
+
+.split-body + .split-body {
+  margin-top: clamp(1rem, 1.5vw, 1.4rem);
 }
 
 .btn-pill {
@@ -808,7 +814,7 @@ button {
   align-items: center;
   justify-content: center;
   align-self: flex-start;
-  margin-top: 0.95rem;
+  margin-top: clamp(1.45rem, 2.2vw, 2.25rem);
   padding: var(--btn-padding-y) var(--btn-padding-x);
   background-color: #111111;
   color: #ffffff;
@@ -1270,24 +1276,25 @@ button {
   .hero-btn { font-size: 1rem; }
   .section-empower { height: clamp(500px, 74vh, 820px); }
   .section-split {
-    flex-direction: row;
-    gap: 11px;
+    display: grid;
+    grid-template-columns: minmax(0, 12fr) clamp(1.5rem, 3vw, 3.4rem) minmax(0, 9fr);
     align-items: center;
-    padding: 0 3vw clamp(40px, 5vw, 78px);
+    gap: 0;
+    padding: clamp(2.9rem, 4.8vw, 4.9rem) 3vw clamp(2.7rem, 5vw, 4.875rem);
   }
   .split-img {
-    order: 1;
-    flex: 0 0 50%;
-    aspect-ratio: 1.158 / 1;
+    order: initial;
+    grid-column: 1;
+    aspect-ratio: 1.205 / 1;
     height: auto;
     min-height: 0;
     max-height: none;
   }
   .split-content {
-    order: 2;
-    flex: 0 0 50%;
+    order: initial;
+    grid-column: 3;
     max-width: none;
-    padding: 0 0 0 clamp(1rem, 2vw, 2rem);
+    padding: 0;
   }
 }
 
@@ -1379,7 +1386,9 @@ button {
   .section-split {
     padding-left: 6vw;
     padding-right: 6vw;
-    padding-bottom: 6.6vw;
+    padding-top: clamp(2rem, 7vw, 2.9rem);
+    padding-bottom: clamp(2.2rem, 7.2vw, 3.2rem);
+    gap: clamp(1.05rem, 4vw, 1.5rem);
   }
 
   .split-content {
