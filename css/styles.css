@@ -67,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 img {
   max-width: 100%;
   display: block;
+  border-radius: 0 !important;
 }
 
 a {
@@ -873,7 +874,7 @@ button {
 .group-img,
 .square-mask,
 .split-img {
-  border-radius: var(--media-radius);
+  border-radius: 0;
   overflow: hidden;
 }
 
