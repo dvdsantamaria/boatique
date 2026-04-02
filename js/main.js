@@ -119,6 +119,20 @@ document.addEventListener('DOMContentLoaded', function () {
   // Video error handling - show fallback image if video fails
   const heroVideo = document.querySelector('.hero-video-container video');
   if (heroVideo) {
+    heroVideo.loop = true;
+    heroVideo.muted = true;
+    heroVideo.playsInline = true;
+
+    const playHeroVideo = () => {
+      const playPromise = heroVideo.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => {
+          // Some browsers block autoplay until user interaction.
+          // Keep video element available and only fallback on real load error.
+        });
+      }
+    };
+
     heroVideo.addEventListener('error', function() {
       this.style.display = 'none';
       const fallbackImg = this.parentElement.querySelector('.hero-fallback-img');
@@ -127,16 +141,13 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // If video doesn't start playing within 3 seconds, show fallback
-    setTimeout(function() {
-      if (heroVideo.paused || heroVideo.ended) {
-        heroVideo.style.display = 'none';
-        const fallbackImg = heroVideo.parentElement.querySelector('.hero-fallback-img');
-        if (fallbackImg) {
-          fallbackImg.style.display = 'block';
-        }
-      }
-    }, 3000);
+    heroVideo.addEventListener('loadeddata', playHeroVideo);
+    heroVideo.addEventListener('ended', function() {
+      this.currentTime = 0;
+      playHeroVideo();
+    });
+
+    playHeroVideo();
   }
 
   // Handle Formspark submissions with Toast
