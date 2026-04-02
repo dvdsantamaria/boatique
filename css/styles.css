@@ -1403,7 +1403,9 @@ button {
   }
 
   .hero {
-    min-height: 560px;
+    min-height: 0;
+    height: 100vh;
+    height: 100dvh;
     padding-bottom: clamp(2rem, 8vh, 3.5rem);
   }
 
