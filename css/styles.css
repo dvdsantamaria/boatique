@@ -14,8 +14,10 @@
   --media-radius: clamp(14px, 2vw, 26px);
   --btn-height: 3.2rem;
   --btn-height-mobile: 3rem;
-  --btn-padding-x: 1.65rem;
-  --btn-padding-x-mobile: 1.5rem;
+  --btn-padding-y: 1.2em;
+  --btn-padding-y-mobile: 1.2em;
+  --btn-padding-x: 2em;
+  --btn-padding-x-mobile: 2em;
   --btn-min-width: 0;
   --btn-min-width-mobile: 0;
   --font-heading: "Manrope", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -395,8 +397,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3rem;
-  padding: 0 1.6rem;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
   border-radius: 9999px;
   background-color: #ffffff;
   color: #111111;
@@ -404,7 +405,7 @@ button {
   font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0;
-  line-height: 1;
+  line-height: 1.2;
   text-transform: uppercase;
   white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
@@ -643,8 +644,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: var(--btn-height);
-  padding: 0 var(--btn-padding-x);
+  padding: var(--btn-padding-y) var(--btn-padding-x);
   background-color: var(--color-accent);
   color: #000000;
   font-family: var(--font-body);
@@ -661,7 +661,7 @@ button {
   transition-delay: 500ms;
   text-decoration: none;
   min-width: 0;
-  line-height: 1;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
@@ -687,8 +687,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: var(--btn-height);
-  padding: 0 var(--btn-padding-x);
+  padding: var(--btn-padding-y) var(--btn-padding-x);
   background-color: #1a1a1a;
   color: #ffffff;
   font-family: var(--font-body);
@@ -702,7 +701,7 @@ button {
   transition: all 0.3s ease;
   text-align: center;
   min-width: 0;
-  line-height: 1;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
@@ -730,6 +729,10 @@ button {
   background-color: #DAE1E3;
   overflow-x: clip;
   min-width: 0;
+}
+
+.section.bg-accent {
+  background-color: #8eb5db;
 }
 
 .section-empower {
@@ -806,8 +809,7 @@ button {
   justify-content: center;
   align-self: flex-start;
   margin-top: 0.95rem;
-  min-height: var(--btn-height);
-  padding: 0 var(--btn-padding-x);
+  padding: var(--btn-padding-y) var(--btn-padding-x);
   background-color: #111111;
   color: #ffffff;
   font-family: var(--font-body);
@@ -818,7 +820,7 @@ button {
   border-radius: 9999px;
   text-decoration: none;
   transition: background-color 0.2s ease;
-  line-height: 1;
+  line-height: 1.2;
   white-space: nowrap;
   min-width: 0;
 }
@@ -1299,10 +1301,10 @@ button {
   }
 
   .nav-cta {
-    min-height: 2.8rem;
-    padding: 0 1.3rem;
-    font-size: 0.95rem;
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    font-size: 1rem;
     letter-spacing: 0;
+    line-height: 1.2;
   }
 }
 
@@ -1329,10 +1331,8 @@ button {
   .btn,
   .btn-pill,
   .hero-btn {
-    min-height: var(--btn-height-mobile);
     min-width: var(--btn-min-width-mobile);
-    padding-left: var(--btn-padding-x-mobile);
-    padding-right: var(--btn-padding-x-mobile);
+    padding: var(--btn-padding-y-mobile) var(--btn-padding-x-mobile);
   }
 
   .container {

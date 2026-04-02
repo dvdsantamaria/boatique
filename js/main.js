@@ -34,18 +34,45 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Smooth scroll for anchor links
+  // Smooth scroll for anchor links with fixed-header offset
+  const getNavbarOffset = () => {
+    const nav = document.getElementById('navbar');
+    if (!nav) return 0;
+    return Math.ceil(nav.getBoundingClientRect().height) + 12;
+  };
+
+  const scrollToHashTarget = (hash, behavior = 'smooth') => {
+    if (!hash || hash === '#') return;
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    const targetTop = target.getBoundingClientRect().top + window.scrollY;
+    const top = Math.max(0, targetTop - getNavbarOffset());
+    window.scrollTo({ top, behavior });
+  };
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+      const hash = this.getAttribute('href');
+      if (!hash || hash === '#') return;
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+      if (window.location.hash !== hash) {
+        history.pushState(null, '', hash);
       }
+      scrollToHashTarget(hash, 'smooth');
     });
+  });
+
+  if (window.location.hash) {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        scrollToHashTarget(window.location.hash, 'auto');
+      });
+    });
+  }
+
+  window.addEventListener('hashchange', () => {
+    scrollToHashTarget(window.location.hash, 'smooth');
   });
 
   // Mobile menu toggle
