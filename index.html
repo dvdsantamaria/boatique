@@ -7,8 +7,9 @@
   <title>Boatique Marine</title>
   <meta name="description" content="Boatique Marine offers yacht consulting, management and Filippetti Yachts representation across Australia.">
   <link rel="icon" type="image/webp" href="./images/favicon.webp">
-  <link rel="preload" as="image" type="image/webp" href="./images/hero-yacht-960.webp"
-    imagesrcset="./images/hero-yacht-960.webp 960w, ./images/hero-yacht-1600.webp 1436w" imagesizes="100vw">
+  <link rel="preload" as="image" type="image/webp" href="./images/hero-placeholder-e36-960.webp"
+    imagesrcset="./images/hero-placeholder-e36-960.webp 960w, ./images/hero-placeholder-e36-1600.webp 1600w"
+    imagesizes="100vw">
   <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -52,14 +53,15 @@
     <!-- Hero Section with Video Background -->
     <section class="hero">
       <div class="hero-video-container" id="hero-bg">
-        <video autoplay muted loop playsinline preload="none" poster="./images/hero-yacht-960.webp">
-          <source data-src="./images/sydneyharbour.mp4" type="video/mp4">
+        <video autoplay muted loop playsinline preload="none" poster="./images/hero-placeholder-e36-960.webp">
+          <source data-src="./images/sydneyharbour-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
+          <source data-src="./images/sydneyharbour-desktop.mp4" type="video/mp4">
           <track kind="captions" srclang="en" label="English captions" src="./images/sydneyharbour-captions.vtt"
             default>
         </video>
-        <img src="./images/hero-yacht-960.webp"
-          srcset="./images/hero-yacht-960.webp 960w, ./images/hero-yacht-1600.webp 1436w" sizes="100vw"
-          alt="Luxury Yacht" class="hero-fallback-img" width="1436" height="1240" loading="eager"
+        <img src="./images/hero-placeholder-e36-960.webp"
+          srcset="./images/hero-placeholder-e36-960.webp 960w, ./images/hero-placeholder-e36-1600.webp 1600w"
+          sizes="100vw" alt="Luxury Yacht" class="hero-fallback-img" width="1600" height="1032" loading="eager"
           fetchpriority="high">
         <div class="hero-overlay"></div>
       </div>
