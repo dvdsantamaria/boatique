@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const getNavbarOffset = () => {
     const nav = document.getElementById('navbar');
     if (!nav) return 0;
-    return Math.ceil(nav.getBoundingClientRect().height) + 12;
+    return Math.ceil(nav.getBoundingClientRect().height) + 28;
   };
 
   const scrollToHashTarget = (hash, behavior = 'smooth') => {

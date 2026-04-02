@@ -1069,6 +1069,11 @@ button {
   font-size: calc((1.6 - 1) * calc(.012 * min(100svh, 900px)) + 1rem);
 }
 
+.home-page #services .group h3 {
+  font-weight: 700;
+  color: #111111;
+}
+
 .home-page .group p.text-lg {
   line-height: calc(1.5 * (1 + (1 - 1.4) / 25));
   font-size: calc((1.4 - 1) * calc(.012 * min(100svh, 900px)) + 1rem);
@@ -1082,6 +1087,10 @@ button {
 .home-page .footer-text {
   font-size: 1rem;
   line-height: 1.5;
+}
+
+.home-page #services .text-dark-80 {
+  color: rgba(17, 17, 17, 0.95);
 }
 
 .home-page .split-heading {
@@ -1110,6 +1119,20 @@ button {
 }
 
 @media (min-width: 768px) {
+  .home-page #services .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(3.2rem, 8.2vw, 8rem);
+    row-gap: clamp(2rem, 3.2vw, 2.8rem);
+  }
+
+  .home-page #services .group-img {
+    margin-bottom: clamp(1.4rem, 2vw, 2rem);
+  }
+
+  .home-page #services .animate-on-scroll > h2 {
+    margin-bottom: clamp(2.6rem, 4.2vw, 4.6rem);
+  }
+
   .home-page .section > .container > .animate-on-scroll > h2 {
     font-size: calc((4 - 1) * 1.2vw + 1rem);
   }
