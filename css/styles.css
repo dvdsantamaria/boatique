@@ -1235,11 +1235,11 @@ button {
 }
 
 .animate-on-scroll[data-animate="slide-in-left"] {
-  transform: translateX(-50px);
+  transform: none;
 }
 
 .animate-on-scroll[data-animate="slide-in-right"] {
-  transform: translateX(50px);
+  transform: none;
 }
 
 .animate-on-scroll.visible {
@@ -1321,6 +1321,15 @@ button {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  /* Desktop Animations */
+  .animate-on-scroll[data-animate="slide-in-left"] {
+    transform: translateX(-50px);
+  }
+
+  .animate-on-scroll[data-animate="slide-in-right"] {
+    transform: translateX(50px);
   }
 }
 
