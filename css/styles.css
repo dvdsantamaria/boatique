@@ -1391,6 +1391,10 @@ button {
     height: 27px;
   }
 
+  .aspect-locked {
+    aspect-ratio: 1 / 1;
+  }
+
   .section {
     padding-top: 6.6vw;
     padding-bottom: 6.6vw;
