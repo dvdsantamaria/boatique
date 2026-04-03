@@ -53,9 +53,9 @@
         </div>
 
         <!-- Yacht Consulting -->
-        <div class="grid-2 service-row gap-8 md:gap-16 items-start mb-16 md:mb-24">
-          <div class="animate-on-scroll" data-animate="slide-in-left">
-            <div class="overflow-hidden group square-mask">
+        <div class="grid-2 service-row service-row-consulting gap-8 md:gap-16 items-start mb-16 md:mb-24">
+          <div class="animate-on-scroll consulting-media-desktop hidden md:block" data-animate="slide-in-left">
+            <div class="overflow-hidden group square-mask consulting-media">
               <img src="./images/yacht-consulting-700.webp"
                 srcset="./images/yacht-consulting-700.webp 700w, ./images/yacht-consulting-1200.webp 1200w"
                 sizes="(min-width: 1024px) 46vw, 92vw" alt="Yacht Consulting"
@@ -67,6 +67,15 @@
           <div class="animate-on-scroll" data-animate="slide-in-right" data-delay="100">
             <div>
               <h2 class="text-2xl md:text-3xl text-dark mb-6">Yacht Consulting</h2>
+
+              <div class="overflow-hidden group square-mask consulting-media consulting-media-mobile md:hidden">
+                <img src="./images/yacht-consulting-700.webp"
+                  srcset="./images/yacht-consulting-700.webp 700w, ./images/yacht-consulting-1200.webp 1200w"
+                  sizes="(max-width: 767px) 88vw, 46vw" alt="Yacht Consulting"
+                  class="img-cover square-mask-img transition-transform duration-700 group-hover:scale-105" width="1200"
+                  height="792" loading="lazy" decoding="async">
+              </div>
+
               <div class="space-y-4 text-blue text-sm md:text-base leading-relaxed">
                 <p>
                   Every vessel owner has unique goals, sharing our passion and enthusiasm for 

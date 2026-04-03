@@ -913,6 +913,10 @@ button {
   align-items: start;
 }
 
+.service-row-consulting .consulting-media {
+  aspect-ratio: 1 / 1;
+}
+
 .service-row-filippetti .filippetti-title {
   margin-bottom: 1.25rem;
   max-width: none;
@@ -1394,17 +1398,19 @@ button {
   }
 
   .services-page .service-row {
-    grid-template-columns: minmax(0, 11fr) minmax(0, 0.85fr) minmax(0, 11fr);
-    column-gap: 11px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(2.4rem, 3.5vw, 3.6rem);
     row-gap: clamp(1.75rem, 2.6vw, 2.4rem);
   }
 
-  .services-page .service-row > :first-child {
-    grid-column: 1;
+  .services-page .service-row > :first-child,
+  .services-page .service-row > :last-child {
+    grid-column: auto;
+    align-self: start;
   }
 
-  .services-page .service-row > :last-child {
-    grid-column: 3;
+  .services-page .service-row-consulting .animate-on-scroll[data-animate="slide-in-right"] {
+    align-self: start;
   }
 }
 
@@ -1522,6 +1528,14 @@ button {
 
   .services-page .service-row.mb-16 {
     margin-bottom: clamp(4.5rem, 12vw, 5.9rem);
+  }
+
+  .service-row-consulting .consulting-media {
+    aspect-ratio: 16 / 10;
+  }
+
+  .service-row-consulting .consulting-media-mobile {
+    margin-bottom: 1.6rem;
   }
 }
 
