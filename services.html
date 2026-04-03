@@ -8,7 +8,7 @@
   <link rel="icon" type="image/webp" href="./images/favicon.webp">
   <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
+<body class="services-page">
   <!-- Navbar -->
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
@@ -100,12 +100,21 @@
         </div>
 
         <!-- Filippetti Yachts -->
-        <div class="grid-2 service-row gap-8 md:gap-16 items-start">
+        <div class="grid-2 service-row service-row-filippetti gap-8 md:gap-16 items-start">
           <div class="animate-on-scroll" data-animate="slide-in-left">
             <div>
-              <h2 class="text-2xl md:text-3xl text-dark mb-2">Filippetti Yachts Ambassador</h2>
-              <p class="text-lg md:text-xl font-normal text-dark mb-6">Sales and commercial contact for the Australian region</p>
-              <div class="space-y-4 text-blue text-sm md:text-base leading-relaxed">
+              <h2 class="text-2xl md:text-3xl text-dark mb-2 filippetti-title">Filippetti Yachts Ambassador</h2>
+              <p class="text-lg md:text-xl font-normal text-dark mb-6 filippetti-subtitle">Sales and commercial contact for the Australian region</p>
+
+              <div class="overflow-hidden group square-mask filippetti-media filippetti-media-mobile md:hidden">
+                <img src="./images/filippetti-ambassador-700.webp"
+                  srcset="./images/filippetti-ambassador-700.webp 700w, ./images/filippetti-ambassador-1200.webp 1200w"
+                  sizes="(max-width: 767px) 88vw, 46vw" alt="Filippetti Yachts"
+                  class="img-cover square-mask-img transition-transform duration-700 group-hover:scale-105" width="1200"
+                  height="900" loading="lazy" decoding="async">
+              </div>
+
+              <div class="space-y-4 text-blue text-sm md:text-base leading-relaxed filippetti-body">
                 <p>
                   We are the direct contact for the Filippetti Yachts Shipyard, based in Mondolfo, 
                   Italy, supporting owners, agents, and buyers in the Australian region. Having 
@@ -128,8 +137,8 @@
             </div>
           </div>
 
-          <div class="animate-on-scroll" data-animate="slide-in-right" data-delay="100">
-            <div class="overflow-hidden group square-mask">
+          <div class="animate-on-scroll filippetti-media-desktop hidden md:block" data-animate="slide-in-right" data-delay="100">
+            <div class="overflow-hidden group square-mask filippetti-media">
               <img src="./images/filippetti-ambassador-700.webp"
                 srcset="./images/filippetti-ambassador-700.webp 700w, ./images/filippetti-ambassador-1200.webp 1200w"
                 sizes="(min-width: 1024px) 46vw, 92vw" alt="Filippetti Yachts"

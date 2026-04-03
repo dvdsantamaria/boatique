@@ -209,6 +209,7 @@ button {
 .mb-6 { margin-bottom: 1.5rem; }
 .mb-8 { margin-bottom: 2rem; }
 .mb-12 { margin-bottom: 3rem; }
+.mb-16 { margin-bottom: 4rem; }
 .mt-1 { margin-top: 0.25rem; }
 .mt-4 { margin-top: 1rem; }
 .mt-6 { margin-top: 1.5rem; }
@@ -912,6 +913,22 @@ button {
   align-items: start;
 }
 
+.service-row-filippetti .filippetti-title {
+  margin-bottom: 0.5rem;
+  max-width: 14ch;
+  line-height: 1.08;
+}
+
+.service-row-filippetti .filippetti-subtitle {
+  margin-bottom: 1.75rem;
+  max-width: 18ch;
+  line-height: 1.3;
+}
+
+.service-row-filippetti .filippetti-media {
+  aspect-ratio: 1 / 1;
+}
+
 /* ========================================
    Forms
    ======================================== */
@@ -1367,6 +1384,25 @@ button {
   .service-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .services-page .main-offset .container {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+
+  .services-page .service-row {
+    grid-template-columns: minmax(0, 11fr) minmax(0, 0.85fr) minmax(0, 11fr);
+    column-gap: 11px;
+    row-gap: clamp(1.75rem, 2.6vw, 2.4rem);
+  }
+
+  .services-page .service-row > :first-child {
+    grid-column: 1;
+  }
+
+  .services-page .service-row > :last-child {
+    grid-column: 3;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1456,6 +1492,24 @@ button {
 
   .footer-bottom {
     margin-top: clamp(1.75rem, 6vw, 2.5rem);
+  }
+
+  .service-row-filippetti .filippetti-title {
+    margin-bottom: 0.35rem;
+  }
+
+  .service-row-filippetti .filippetti-subtitle {
+    margin-bottom: 1.5rem;
+    max-width: 15ch;
+    line-height: 1.24;
+  }
+
+  .service-row-filippetti .filippetti-media {
+    aspect-ratio: 16 / 10;
+  }
+
+  .service-row-filippetti .filippetti-media-mobile {
+    margin-bottom: 1rem;
   }
 }
 
