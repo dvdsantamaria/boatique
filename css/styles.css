@@ -1370,12 +1370,12 @@ body:not(.home-page) .main-offset h1.text-3xl {
     transform: translateX(-50%);
   }
 
-  /* Desktop Animations */
-  .animate-on-scroll[data-animate="slide-in-left"] {
+  /* Desktop Animations (exclude home to keep headings/content aligned to container) */
+  body:not(.home-page) .animate-on-scroll[data-animate="slide-in-left"] {
     transform: translateX(-50px);
   }
 
-  .animate-on-scroll[data-animate="slide-in-right"] {
+  body:not(.home-page) .animate-on-scroll[data-animate="slide-in-right"] {
     transform: translateX(50px);
   }
 }
