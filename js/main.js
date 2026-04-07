@@ -26,13 +26,43 @@ document.addEventListener('DOMContentLoaded', function () {
     navbar.classList.add('scrolled');
   }
 
+  let lastScrollY = window.scrollY;
+  const scrollDeltaThreshold = 8;
+
   window.addEventListener('scroll', () => {
-    if (forceSolidNavbar || window.scrollY > 50 || !isHomePage) {
+    const currentScrollY = window.scrollY;
+
+    if (forceSolidNavbar || currentScrollY > 50 || !isHomePage) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
-  });
+
+    if (!navbar || mobileNav?.classList.contains('open')) {
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    // Keep navbar visible near the top to avoid jitter.
+    if (currentScrollY <= 24) {
+      navbar.classList.remove('navbar-hidden');
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    const delta = currentScrollY - lastScrollY;
+    if (Math.abs(delta) < scrollDeltaThreshold) {
+      return;
+    }
+
+    if (delta > 0) {
+      navbar.classList.add('navbar-hidden');
+    } else {
+      navbar.classList.remove('navbar-hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  }, { passive: true });
 
   // Smooth scroll for anchor links with fixed-header offset
   const getNavbarOffset = () => {
@@ -84,6 +114,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const isOpen = mobileNav.classList.toggle('open');
       mobileMenuBtn.classList.toggle('open', isOpen);
       document.body.classList.toggle('menu-open', isOpen);
+      if (isOpen) {
+        navbar.classList.remove('navbar-hidden');
+      }
       
       // Update aria-label
       mobileMenuBtn.setAttribute('aria-label', isOpen ? 'Close Menu' : 'Open Menu');
@@ -97,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mobileMenuBtn.classList.remove('open');
         document.body.classList.remove('menu-open');
         mobileMenuBtn.setAttribute('aria-label', 'Open Menu');
+        navbar.classList.remove('navbar-hidden');
       });
     });
 
@@ -107,6 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mobileMenuBtn.classList.remove('open');
         document.body.classList.remove('menu-open');
         mobileMenuBtn.setAttribute('aria-label', 'Open Menu');
+        navbar.classList.remove('navbar-hidden');
       }
     });
   }
