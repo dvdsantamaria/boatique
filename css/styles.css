@@ -20,6 +20,8 @@
   --btn-padding-x-mobile: 2em;
   --btn-min-width: 0;
   --btn-min-width-mobile: 0;
+  --page-gutter: clamp(20px, 6vw, 84px);
+  --layout-column-gap: clamp(1.5rem, 3vw, 3.5rem);
   --font-heading: "Manrope", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Nunito Sans", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
@@ -104,8 +106,8 @@ button {
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
 }
 
 .flex { display: flex; }
@@ -340,7 +342,7 @@ button {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  padding: 0 3vw;
+  padding: 0 var(--page-gutter);
   position: relative;
 }
 
@@ -613,8 +615,8 @@ button {
   position: relative;
   z-index: 10;
   text-align: center;
-  padding-left: 6vw;
-  padding-right: 6vw;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
   max-width: min(1400px, 100%);
   margin: 0 auto;
 }
@@ -757,7 +759,7 @@ button {
   gap: clamp(1.25rem, 3.2vw, 2.25rem);
   max-width: 1400px;
   margin: 0 auto;
-  padding: clamp(2.5rem, 4.6vw, 4.5rem) 3vw clamp(2.6rem, 5vw, 4.875rem);
+  padding: clamp(2.5rem, 4.6vw, 4.5rem) var(--page-gutter) clamp(2.6rem, 5vw, 4.875rem);
   background-color: #DAE1E3;
 }
 
@@ -1011,8 +1013,8 @@ button {
 
 .footer .container {
   max-width: none;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
 }
 
 .footer .container > .grid-2 {
@@ -1123,7 +1125,7 @@ button {
 }
 
 .home-page .footer .container > .grid-2 {
-  gap: 11px;
+  gap: clamp(2rem, 4vw, 4.5rem);
 }
 
 .home-page .footer-tagline {
@@ -1162,7 +1164,7 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
   .home-page #services .grid-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 11px;
+    column-gap: var(--layout-column-gap);
     row-gap: clamp(1.9rem, 2.6vw, 2.4rem);
   }
 
@@ -1298,8 +1300,8 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
 @media (min-width: 768px) {
   .container {
-    padding-left: 3vw;
-    padding-right: 3vw;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
   }
 
   .md\:flex { display: flex; }
@@ -1333,8 +1335,8 @@ body:not(.home-page) .main-offset h1.text-3xl {
   .mobile-menu-btn { display: none; }
 
   .hero-content {
-    padding-left: 3vw;
-    padding-right: 3vw;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
   }
 
   .hero-title { font-size: 2.5rem; }
@@ -1342,10 +1344,10 @@ body:not(.home-page) .main-offset h1.text-3xl {
   .section-empower { height: clamp(500px, 74vh, 820px); }
   .section-split {
     display: grid;
-    grid-template-columns: minmax(0, 12fr) clamp(1.5rem, 3vw, 3.4rem) minmax(0, 9fr);
+    grid-template-columns: minmax(0, 12fr) var(--layout-column-gap) minmax(0, 9fr);
     align-items: center;
     gap: 0;
-    padding: clamp(2.9rem, 4.8vw, 4.9rem) 3vw clamp(2.7rem, 5vw, 4.875rem);
+    padding: clamp(2.9rem, 4.8vw, 4.9rem) var(--page-gutter) clamp(2.7rem, 5vw, 4.875rem);
   }
   .split-img {
     order: initial;
@@ -1397,8 +1399,8 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
 @media (min-width: 1024px) {
   .container {
-    padding-left: 3vw;
-    padding-right: 3vw;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
   }
 
   .lg\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
@@ -1406,7 +1408,7 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
   .hero-title { font-size: 2.8rem; }
   .logo-img { height: 77px; }
-  .navbar-inner { padding: 0 3vw; }
+  .navbar-inner { padding: 0 var(--page-gutter); }
   .hero-btn { font-size: 1rem; }
   .split-img { min-height: 0; }
   .service-row {
@@ -1414,13 +1416,13 @@ body:not(.home-page) .main-offset h1.text-3xl {
   }
 
   .services-page .main-offset .container {
-    padding-left: 4vw;
-    padding-right: 4vw;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
   }
 
   .services-page .service-row {
     grid-template-columns: minmax(0, 11fr) minmax(0, 1fr) minmax(0, 11fr);
-    column-gap: 11px;
+    column-gap: var(--layout-column-gap);
     row-gap: clamp(1.75rem, 2.6vw, 2.4rem);
   }
 
@@ -1452,13 +1454,13 @@ body:not(.home-page) .main-offset h1.text-3xl {
   }
 
   .container {
-    padding-left: 6vw;
-    padding-right: 6vw;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
   }
 
   .navbar-inner {
-    padding-left: 6vw;
-    padding-right: 6vw;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
   }
 
   .logo-img {
@@ -1488,8 +1490,8 @@ body:not(.home-page) .main-offset h1.text-3xl {
   }
 
   .hero-content {
-    padding-left: 6vw;
-    padding-right: 6vw;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
   }
 
   .hero-title {
@@ -1499,8 +1501,8 @@ body:not(.home-page) .main-offset h1.text-3xl {
   }
 
   .section-split {
-    padding-left: 6vw;
-    padding-right: 6vw;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
     padding-top: clamp(2rem, 7vw, 2.9rem);
     padding-bottom: clamp(2.2rem, 7.2vw, 3.2rem);
     gap: clamp(2.25rem, 6vw, 3.25rem);
@@ -1524,8 +1526,8 @@ body:not(.home-page) .main-offset h1.text-3xl {
   .footer { padding-top: clamp(2.75rem, 9vw, 4rem); }
 
   .footer .container {
-    padding-left: 6vw;
-    padding-right: 6vw;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
   }
 
   .footer-bottom {
@@ -1588,8 +1590,8 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
   .container,
   .navbar-inner {
-    padding-left: 6vw;
-    padding-right: 6vw;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
   }
 
   .mobile-nav a {
@@ -1605,7 +1607,7 @@ body:not(.home-page) .main-offset h1.text-3xl {
 }
 
 @media (min-width: 375px) and (max-width: 430px) {
-  .container { padding-left: 6vw; padding-right: 6vw; }
+  .container { padding-left: var(--page-gutter); padding-right: var(--page-gutter); }
 
   .hero-title { font-size: calc((2.8 - 1) * calc(.012 * min(100svh, 900px)) + 1rem); }
 
@@ -1616,7 +1618,7 @@ body:not(.home-page) .main-offset h1.text-3xl {
 }
 
 @media (min-width: 431px) and (max-width: 767px) {
-  .container { padding-left: 6vw; padding-right: 6vw; }
+  .container { padding-left: var(--page-gutter); padding-right: var(--page-gutter); }
 
   .hero-title { font-size: calc((2.8 - 1) * calc(.012 * min(100svh, 900px)) + 1rem); }
 }
