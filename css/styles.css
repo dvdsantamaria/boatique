@@ -22,8 +22,9 @@
   --btn-min-width-mobile: 0;
   --page-gutter: clamp(20px, 6vw, 84px);
   --layout-column-gap: clamp(1.5rem, 3vw, 3.5rem);
-  --guiding-focus-x: 67%;
-  --guiding-focus-y: 62%;
+  --content-grid-gap: clamp(1.75rem, 3vw, 3.25rem);
+  --guiding-focus-x: 54%;
+  --guiding-focus-y: 60%;
   --font-heading: "Manrope", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Nunito Sans", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
@@ -920,6 +921,22 @@ button {
 
 .service-row {
   align-items: start;
+  grid-template-columns: 1fr;
+  row-gap: clamp(1.75rem, 3.5vw, 2.5rem);
+  column-gap: var(--content-grid-gap);
+}
+
+.about-page .main-offset > .section:first-child .grid-2,
+.contact-page .main-offset > .section:first-child .grid-2 {
+  grid-template-columns: 1fr;
+  row-gap: clamp(1.75rem, 3.5vw, 2.5rem);
+  column-gap: var(--content-grid-gap);
+}
+
+.service-row > *,
+.about-page .main-offset > .section:first-child .grid-2 > *,
+.contact-page .main-offset > .section:first-child .grid-2 > * {
+  min-width: 0;
 }
 
 .service-row-consulting .consulting-media {
@@ -1374,14 +1391,6 @@ body:not(.home-page) .main-offset h1.text-3xl {
     transform: translateX(-50%);
   }
 
-  /* Desktop Animations (exclude home to keep headings/content aligned to container) */
-  body:not(.home-page) .animate-on-scroll[data-animate="slide-in-left"] {
-    transform: translateX(-50px);
-  }
-
-  body:not(.home-page) .animate-on-scroll[data-animate="slide-in-right"] {
-    transform: translateX(50px);
-  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -1415,38 +1424,6 @@ body:not(.home-page) .main-offset h1.text-3xl {
   .navbar-inner { padding: 0 var(--page-gutter); }
   .hero-btn { font-size: 1rem; }
   .split-img { min-height: 0; }
-  .service-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .services-page .main-offset .container {
-    padding-left: var(--page-gutter);
-    padding-right: var(--page-gutter);
-  }
-
-  .services-page .service-row {
-    grid-template-columns: minmax(0, 11fr) minmax(0, 1fr) minmax(0, 11fr);
-    column-gap: var(--layout-column-gap);
-    row-gap: clamp(1.75rem, 2.6vw, 2.4rem);
-  }
-
-  .services-page .service-row > :first-child,
-  .services-page .service-row > :last-child {
-    grid-column: 1;
-    align-self: start;
-  }
-
-  .services-page .service-row > :last-child {
-    grid-column: 3;
-  }
-
-  .services-page .service-row-consulting .animate-on-scroll[data-animate="slide-in-right"] {
-    align-self: start;
-  }
-
-  .services-page .service-row .animate-on-scroll {
-    transform: none !important;
-  }
 }
 
 @media (max-width: 767px) {
@@ -1667,20 +1644,74 @@ body:not(.home-page) .main-offset h1.text-3xl {
   .hero-title { font-size: calc((2.8 - 1) * calc(.012 * min(100svh, 900px)) + 1rem); }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .service-row {
+@media (min-width: 768px) and (max-width: 1199px) {
+  .about-page .main-offset > .section:first-child .grid-2,
+  .contact-page .main-offset > .section:first-child .grid-2,
+  .services-page .service-row {
     grid-template-columns: 1fr;
-    gap: clamp(1.5rem, 3vw, 2.25rem);
+    row-gap: clamp(1.75rem, 3.5vw, 2.5rem);
+    column-gap: var(--content-grid-gap);
   }
 
-  .service-row .square-mask {
-    max-width: min(580px, 100%);
-    margin-inline: auto;
-    aspect-ratio: 16 / 10;
+  .services-page .service-row > * {
+    grid-column: auto !important;
   }
 
-  .service-row .btn {
-    margin-top: 1.5rem;
+  .services-page .consulting-media-desktop,
+  .services-page .filippetti-media-desktop {
+    display: none !important;
+  }
+
+  .services-page .consulting-media-mobile,
+  .services-page .filippetti-media-mobile {
+    display: block !important;
+  }
+
+  .about-page .main-offset > .section:first-child .grid-2 > :last-child {
+    display: none !important;
+  }
+
+  .about-page .main-offset > .section:first-child .grid-2 > :first-child .media-mask {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-page .main-offset > .section:first-child .grid-2,
+  .contact-page .main-offset > .section:first-child .grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--content-grid-gap);
+    row-gap: clamp(1.75rem, 2.6vw, 2.4rem);
+    align-items: start;
+  }
+
+  .services-page .main-offset .container {
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+  }
+
+  .services-page .service-row {
+    grid-template-columns: minmax(0, 11fr) var(--layout-column-gap) minmax(0, 11fr);
+    column-gap: var(--layout-column-gap);
+    row-gap: clamp(1.75rem, 2.6vw, 2.4rem);
+  }
+
+  .services-page .service-row > :first-child,
+  .services-page .service-row > :last-child {
+    grid-column: 1;
+    align-self: start;
+  }
+
+  .services-page .service-row > :last-child {
+    grid-column: 3;
+  }
+
+  .services-page .service-row-consulting .animate-on-scroll[data-animate="slide-in-right"] {
+    align-self: start;
+  }
+
+  .services-page .service-row .animate-on-scroll {
+    transform: none !important;
   }
 }
 
