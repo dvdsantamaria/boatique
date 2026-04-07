@@ -25,6 +25,8 @@
   --content-grid-gap: clamp(1.75rem, 3vw, 3.25rem);
   --guiding-focus-x: 54%;
   --guiding-focus-y: 60%;
+  --about-focus-x: 56%;
+  --about-focus-y: 34%;
   --font-heading: "Manrope", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Nunito Sans", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
@@ -919,6 +921,17 @@ button {
   object-fit: cover;
 }
 
+.about-page .media-mask .img-cover {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: var(--about-focus-x) var(--about-focus-y);
+}
+
+.about-page .main-offset > .section:first-child .media-mask {
+  aspect-ratio: 3 / 4;
+}
+
 .service-row {
   align-items: start;
   grid-template-columns: 1fr;
@@ -1579,9 +1592,9 @@ body:not(.home-page) .main-offset h1.text-3xl {
   }
 
   .about-page .media-mask .img-cover {
-    height: auto;
-    aspect-ratio: 3 / 4;
-    object-position: 52% 44%;
+    width: 100%;
+    height: 100% !important;
+    object-position: var(--about-focus-x) var(--about-focus-y);
   }
 
   .contact-page .media-mask .img-cover {
