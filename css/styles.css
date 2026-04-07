@@ -768,12 +768,13 @@ button {
   position: relative;
   overflow: hidden;
   width: 100%;
-  aspect-ratio: 1.205 / 1;
+  aspect-ratio: 2 / 3;
   height: auto;
 }
 
 .split-img img {
-  position: static;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1352,7 +1353,7 @@ body:not(.home-page) .main-offset h1.text-3xl {
   .split-img {
     order: initial;
     grid-column: 1;
-    aspect-ratio: 1.205 / 1;
+    aspect-ratio: 2 / 3;
     height: auto;
     min-height: 0;
     max-height: none;
