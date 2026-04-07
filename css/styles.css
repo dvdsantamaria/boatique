@@ -23,8 +23,8 @@
   --page-gutter: clamp(20px, 6vw, 84px);
   --layout-column-gap: clamp(1.5rem, 3vw, 3.5rem);
   --content-grid-gap: clamp(1.75rem, 3vw, 3.25rem);
-  --guiding-focus-x: 54%;
-  --guiding-focus-y: 60%;
+  --guiding-focus-x: 31%;
+  --guiding-focus-y: 58%;
   --about-focus-x: 56%;
   --about-focus-y: 34%;
   --font-heading: "Manrope", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -1516,10 +1516,6 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
   .home-page .split-img {
     aspect-ratio: 3 / 4;
-  }
-
-  .home-page .split-img img {
-    object-position: 31% 58%;
   }
 
   .split-content {
