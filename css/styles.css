@@ -1037,6 +1037,30 @@ button {
   accent-color: #1a1a1a;
 }
 
+.about-page .form-input-dark,
+.about-page .form-textarea-dark {
+  border-color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.about-page .form-input-dark::placeholder,
+.about-page .form-textarea-dark::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.about-page .form-input-dark:focus,
+.about-page .form-textarea-dark:focus {
+  border-color: rgba(0, 0, 0, 0.72);
+}
+
+.about-page #about-newsletter {
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+.about-page label[for="about-newsletter"] {
+  color: rgba(0, 0, 0, 0.82);
+}
+
 /* ========================================
    Footer
    ======================================== */
@@ -1440,6 +1464,10 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
   .lg\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
   .lg\:text-5xl { font-size: 3rem; line-height: 1.2; }
+  .empower-title {
+    font-size: clamp(2rem, 2.35vw, 2.55rem);
+    line-height: 1.15;
+  }
 
   .hero-title { font-size: 2.8rem; }
   .logo-img { height: 77px; }
@@ -1695,6 +1723,29 @@ body:not(.home-page) .main-offset h1.text-3xl {
 }
 
 @media (min-width: 1200px) {
+  .home-page #services .grid-2 {
+    align-items: stretch;
+  }
+
+  .home-page #services .group {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  .home-page #services .group .btn {
+    margin-top: auto;
+  }
+
+  .home-page #services .group .btn,
+  .services-page .main-offset .btn {
+    width: clamp(240px, 43%, 390px);
+    max-width: 100%;
+    min-height: clamp(64px, 4.2vw, 76px);
+    font-size: 1.02rem;
+    letter-spacing: 0;
+  }
+
   .about-page .main-offset > .section:first-child .grid-2,
   .contact-page .main-offset > .section:first-child .grid-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
