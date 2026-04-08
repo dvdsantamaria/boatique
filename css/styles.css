@@ -1039,26 +1039,18 @@ button {
 
 .about-page .form-input-dark,
 .about-page .form-textarea-dark {
-  border-color: rgba(0, 0, 0, 0.5);
-  color: rgba(0, 0, 0, 0.88);
+  border-color: rgba(46, 70, 93, 0.34);
+  color: rgba(40, 61, 82, 0.82);
 }
 
 .about-page .form-input-dark::placeholder,
 .about-page .form-textarea-dark::placeholder {
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(40, 61, 82, 0.58);
 }
 
 .about-page .form-input-dark:focus,
 .about-page .form-textarea-dark:focus {
-  border-color: rgba(0, 0, 0, 0.72);
-}
-
-.about-page #about-newsletter {
-  border-color: rgba(0, 0, 0, 0.5);
-}
-
-.about-page label[for="about-newsletter"] {
-  color: rgba(0, 0, 0, 0.82);
+  border-color: rgba(34, 56, 79, 0.5);
 }
 
 /* ========================================
@@ -1468,6 +1460,9 @@ body:not(.home-page) .main-offset h1.text-3xl {
     font-size: clamp(2rem, 2.35vw, 2.55rem);
     line-height: 1.15;
   }
+  .home-page .section-empower .img-cover {
+    object-position: 50% 45%;
+  }
 
   .hero-title { font-size: 2.8rem; }
   .logo-img { height: 77px; }
@@ -1744,6 +1739,10 @@ body:not(.home-page) .main-offset h1.text-3xl {
     min-height: clamp(64px, 4.2vw, 76px);
     font-size: 1.02rem;
     letter-spacing: 0;
+  }
+
+  .home-page #services .group > p.text-dark-80 + .btn {
+    margin-top: clamp(2.1rem, 3vw, 2.9rem);
   }
 
   .about-page .main-offset > .section:first-child .grid-2,
