@@ -1805,6 +1805,8 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
   .services-page .service-row-filippetti .filippetti-media-desktop {
     height: 100%;
+    width: min(100%, 23rem);
+    margin-left: auto;
   }
 
   .services-page .service-row-filippetti .filippetti-media-desktop .filippetti-media {
