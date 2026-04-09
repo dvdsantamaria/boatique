@@ -23,10 +23,10 @@
   --page-gutter: clamp(20px, 6vw, 84px);
   --layout-column-gap: clamp(1.5rem, 3vw, 3.5rem);
   --content-grid-gap: clamp(1.75rem, 3vw, 3.25rem);
-  --guiding-focus-x: 31%;
-  --guiding-focus-y: 58%;
-  --about-focus-x: 56%;
-  --about-focus-y: 34%;
+  --guiding-focus-x: 50%;
+  --guiding-focus-y: 56%;
+  --about-focus-x: 45%;
+  --about-focus-y: 50%;
   --font-heading: "Manrope", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Nunito Sans", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
@@ -1770,17 +1770,14 @@ body:not(.home-page) .main-offset h1.text-3xl {
   }
 
   .about-page .main-offset > .section:first-child .grid-2 {
-    grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
-    column-gap: clamp(0.7rem, 1.25vw, 1.35rem);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 36px;
     row-gap: clamp(1.75rem, 2.6vw, 2.4rem);
     align-items: stretch;
   }
 
   .about-page .main-offset > .section:first-child .grid-2 > :last-child {
-    justify-self: end;
     align-self: stretch;
-    width: clamp(23rem, 33vw, 30rem);
-    max-width: 100%;
   }
 
   .about-page .main-offset > .section:first-child .grid-2 > :last-child > div {
@@ -1794,6 +1791,7 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
   .about-page .main-offset > .section:first-child .grid-2 > :last-child .img-cover {
     height: 100% !important;
+    object-position: var(--about-focus-x) var(--about-focus-y);
   }
 
   .services-page .main-offset .container {
@@ -1864,7 +1862,7 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
   .services-page .service-row-filippetti .filippetti-media-desktop .square-mask-img {
     height: 100%;
-    object-position: 85% 50%;
+    object-position: 79% 50%;
   }
 
   .services-page .consulting-media-desktop,
