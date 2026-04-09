@@ -413,12 +413,12 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--btn-padding-y) var(--btn-padding-x);
+  padding: calc(var(--btn-padding-y) * 0.8) calc(var(--btn-padding-x) * 0.8);
   border-radius: 9999px;
   background-color: #ffffff;
   color: #111111;
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.2;
@@ -1455,8 +1455,8 @@ body:not(.home-page) .main-offset h1.text-3xl {
   }
 
   .nav-cta {
-    padding: var(--btn-padding-y) var(--btn-padding-x);
-    font-size: 1rem;
+    padding: calc(var(--btn-padding-y) * 0.8) calc(var(--btn-padding-x) * 0.8);
+    font-size: 0.9rem;
     letter-spacing: 0;
     line-height: 1.2;
   }
