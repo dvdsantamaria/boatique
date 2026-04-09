@@ -1772,11 +1772,17 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
   .about-page .main-offset > .section:first-child .grid-2 > :last-child {
     justify-self: end;
-    width: min(100%, 23rem);
+    align-self: stretch;
+    width: min(100%, 22rem);
+  }
+
+  .about-page .main-offset > .section:first-child .grid-2 > :last-child > div {
+    height: 100%;
   }
 
   .about-page .main-offset > .section:first-child .grid-2 > :last-child .media-mask {
     height: 100%;
+    aspect-ratio: auto;
   }
 
   .about-page .main-offset > .section:first-child .grid-2 > :last-child .img-cover {
