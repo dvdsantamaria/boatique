@@ -25,7 +25,7 @@
   --content-grid-gap: clamp(1.75rem, 3vw, 3.25rem);
   --guiding-focus-x: 50%;
   --guiding-focus-y: 56%;
-  --about-focus-x: 45%;
+  --about-focus-x: 46%;
   --about-focus-y: 50%;
   --font-heading: "Manrope", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --font-body: "Nunito Sans", "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
@@ -1188,6 +1188,14 @@ button {
   color: rgba(17, 17, 17, 0.95);
 }
 
+.home-page #services .group:first-child .aspect-locked {
+  object-position: 50% 50%;
+}
+
+.home-page #services .group:last-child .aspect-locked {
+  object-position: 79% 50%;
+}
+
 .home-page .split-heading {
   line-height: calc(1.2 * (1 + (1 - 4) / 25));
   font-size: calc((4 - 1) * calc(.012 * min(100svh, 900px)) + 1rem);
@@ -1512,11 +1520,11 @@ body:not(.home-page) .main-offset h1.text-3xl {
   }
 
   .home-page #services .group:first-child .aspect-locked {
-    object-position: 56% 48%;
+    object-position: 50% 50%;
   }
 
   .home-page #services .group:last-child .aspect-locked {
-    object-position: 50% 55%;
+    object-position: 79% 50%;
   }
 
   .section {
@@ -1626,11 +1634,11 @@ body:not(.home-page) .main-offset h1.text-3xl {
   }
 
   .services-page .consulting-media-mobile .square-mask-img {
-    object-position: 50% 58%;
+    object-position: 50% 50%;
   }
 
   .services-page .filippetti-media-mobile .square-mask-img {
-    object-position: 52% 56%;
+    object-position: 81% 56%;
   }
 
   .about-page .media-mask .img-cover {
@@ -1800,9 +1808,10 @@ body:not(.home-page) .main-offset h1.text-3xl {
   }
 
   .services-page .service-row {
-    grid-template-columns: minmax(0, 11fr) var(--layout-column-gap) minmax(0, 11fr);
-    column-gap: var(--layout-column-gap);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--content-grid-gap);
     row-gap: clamp(1.75rem, 2.6vw, 2.4rem);
+    align-items: stretch;
   }
 
   .services-page .service-row > :first-child,
@@ -1812,7 +1821,7 @@ body:not(.home-page) .main-offset h1.text-3xl {
   }
 
   .services-page .service-row > :last-child {
-    grid-column: 3;
+    grid-column: 2;
   }
 
   .services-page .service-row-consulting .animate-on-scroll[data-animate="slide-in-right"] {
@@ -1829,19 +1838,21 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
   .services-page .service-row-consulting .consulting-media-desktop {
     height: 100%;
-    width: min(100%, 23rem);
-    margin-right: auto;
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
   }
 
   .services-page .service-row-consulting .consulting-media-desktop .consulting-media {
     height: 100%;
-    min-height: 100%;
+    min-height: 0;
     aspect-ratio: auto;
   }
 
   .services-page .service-row-consulting .consulting-media-desktop .square-mask-img {
-    height: 100%;
-    object-position: 50% 58%;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: 50% 50%;
   }
 
   .services-page .service-row-filippetti > :last-child {
@@ -1850,19 +1861,21 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
   .services-page .service-row-filippetti .filippetti-media-desktop {
     height: 100%;
-    width: min(100%, 23rem);
-    margin-left: auto;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
   }
 
   .services-page .service-row-filippetti .filippetti-media-desktop .filippetti-media {
     height: 100%;
-    min-height: 100%;
+    min-height: 0;
     aspect-ratio: auto;
   }
 
   .services-page .service-row-filippetti .filippetti-media-desktop .square-mask-img {
-    height: 100%;
-    object-position: 79% 50%;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: 81% 56%;
   }
 
   .services-page .consulting-media-desktop,
@@ -1877,6 +1890,86 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
   .about-page .main-offset > .section:first-child .grid-2 > :last-child {
     display: block !important;
+  }
+}
+
+/* Explicit media-visibility guards to avoid duplicated mobile/desktop images */
+.about-page .about-media-mobile,
+.services-page .service-media-mobile {
+  display: block;
+}
+
+.about-page .about-media-desktop,
+.services-page .service-media-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .about-page .about-media-mobile,
+  .services-page .service-media-mobile {
+    display: none !important;
+  }
+
+  .about-page .about-media-desktop,
+  .services-page .service-media-desktop {
+    display: block !important;
+  }
+}
+
+/* Services image masking logic (same robust pattern used in about) */
+.services-page .service-row .square-mask {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.services-page .service-row .square-mask-img {
+  width: 100%;
+  height: 100% !important;
+  display: block;
+  object-fit: cover !important;
+  object-position: var(--service-mask-focus-x, 50%) var(--service-mask-focus-y, 50%) !important;
+}
+
+.services-page .service-row-consulting .square-mask {
+  --service-mask-focus-x: 50%;
+  --service-mask-focus-y: 50%;
+}
+
+.services-page .service-row-filippetti .square-mask {
+  --service-mask-focus-x: 81%;
+  --service-mask-focus-y: 56%;
+}
+
+@media (min-width: 990px) {
+  .services-page .service-media-desktop,
+  .services-page .service-media-desktop > .square-mask {
+    width: 100%;
+    height: 100%;
+  }
+
+  .services-page .service-media-desktop > .square-mask {
+    position: relative;
+    aspect-ratio: auto;
+    min-height: 0;
+  }
+
+  .services-page .service-media-desktop > .square-mask > .square-mask-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .services-page .service-row-consulting .service-media-desktop .square-mask {
+    --service-mask-focus-x: 50%;
+    --service-mask-focus-y: 50%;
+  }
+
+  .services-page .service-row-filippetti .service-media-desktop .square-mask {
+    --service-mask-focus-x: 81%;
+    --service-mask-focus-y: 56%;
   }
 }
 
