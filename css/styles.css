@@ -592,22 +592,36 @@ button {
 }
 
 .hero-video-container video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 500ms ease;
 }
 
 .hero-video-container .hero-fallback-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: none;
+  opacity: 1;
+  transition: opacity 400ms ease;
 }
 
-/* Fallback for browsers that don't support video */
-.hero-video-container video:not([src]) + .hero-fallback-img,
-.hero-video-container video[src=""] + .hero-fallback-img {
-  display: block;
+.hero-video-container.is-video-ready video {
+  opacity: 1;
+}
+
+.hero-video-container.is-video-ready .hero-fallback-img {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-video-container.has-video-error video {
+  display: none;
 }
 
 .hero-overlay {

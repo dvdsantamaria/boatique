@@ -181,8 +181,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // Video error handling - show fallback image if video fails
   const heroVideo = document.querySelector('.hero-video-container video');
   if (heroVideo) {
-    const fallbackImg = heroVideo.parentElement.querySelector('.hero-fallback-img');
+    const heroMedia = heroVideo.parentElement;
+    const fallbackImg = heroMedia.querySelector('.hero-fallback-img');
     const videoSources = heroVideo.querySelectorAll('source[data-src]');
+
+    const revealHeroVideo = () => {
+      heroMedia.classList.add('is-video-ready');
+    };
+
     videoSources.forEach(function(source) {
       if (!source.src) {
         source.src = source.dataset.src;
@@ -205,13 +211,18 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     heroVideo.addEventListener('error', function() {
+      heroMedia.classList.remove('is-video-ready');
+      heroMedia.classList.add('has-video-error');
       this.style.display = 'none';
       if (fallbackImg) {
-        fallbackImg.style.display = 'block';
+        fallbackImg.style.opacity = '1';
       }
     });
 
-    heroVideo.addEventListener('loadeddata', playHeroVideo);
+    heroVideo.addEventListener('loadeddata', function() {
+      revealHeroVideo();
+      playHeroVideo();
+    });
     heroVideo.addEventListener('ended', function() {
       this.currentTime = 0;
       playHeroVideo();
