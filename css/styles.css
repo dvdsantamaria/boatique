@@ -1812,6 +1812,27 @@ body:not(.home-page) .main-offset h1.text-3xl {
     transform: none !important;
   }
 
+  .services-page .service-row-consulting > :first-child {
+    align-self: stretch;
+  }
+
+  .services-page .service-row-consulting .consulting-media-desktop {
+    height: 100%;
+    width: min(100%, 23rem);
+    margin-right: auto;
+  }
+
+  .services-page .service-row-consulting .consulting-media-desktop .consulting-media {
+    height: 100%;
+    min-height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .services-page .service-row-consulting .consulting-media-desktop .square-mask-img {
+    height: 100%;
+    object-position: 50% 58%;
+  }
+
   .services-page .service-row-filippetti > :last-child {
     align-self: stretch;
   }
