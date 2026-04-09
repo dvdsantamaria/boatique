@@ -1699,7 +1699,7 @@ body:not(.home-page) .main-offset h1.text-3xl {
   .hero-title { font-size: calc((2.8 - 1) * calc(.012 * min(100svh, 900px)) + 1rem); }
 }
 
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 989px) {
   .about-page .main-offset > .section:first-child .grid-2,
   .contact-page .main-offset > .section:first-child .grid-2,
   .services-page .service-row {
@@ -1759,6 +1759,9 @@ body:not(.home-page) .main-offset h1.text-3xl {
     margin-top: clamp(2.1rem, 3vw, 2.9rem);
   }
 
+}
+
+@media (min-width: 990px) {
   .about-page .main-offset > .section:first-child .grid-2,
   .contact-page .main-offset > .section:first-child .grid-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1794,6 +1797,20 @@ body:not(.home-page) .main-offset h1.text-3xl {
 
   .services-page .service-row .animate-on-scroll {
     transform: none !important;
+  }
+
+  .services-page .consulting-media-desktop,
+  .services-page .filippetti-media-desktop {
+    display: block !important;
+  }
+
+  .services-page .consulting-media-mobile,
+  .services-page .filippetti-media-mobile {
+    display: none !important;
+  }
+
+  .about-page .main-offset > .section:first-child .grid-2 > :last-child {
+    display: block !important;
   }
 }
 
