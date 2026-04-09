@@ -1762,7 +1762,6 @@ body:not(.home-page) .main-offset h1.text-3xl {
 }
 
 @media (min-width: 990px) {
-  .about-page .main-offset > .section:first-child .grid-2,
   .contact-page .main-offset > .section:first-child .grid-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: var(--content-grid-gap);
@@ -1770,10 +1769,18 @@ body:not(.home-page) .main-offset h1.text-3xl {
     align-items: start;
   }
 
+  .about-page .main-offset > .section:first-child .grid-2 {
+    grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+    column-gap: clamp(0.7rem, 1.25vw, 1.35rem);
+    row-gap: clamp(1.75rem, 2.6vw, 2.4rem);
+    align-items: stretch;
+  }
+
   .about-page .main-offset > .section:first-child .grid-2 > :last-child {
     justify-self: end;
     align-self: stretch;
-    width: min(100%, 22rem);
+    width: clamp(23rem, 33vw, 30rem);
+    max-width: 100%;
   }
 
   .about-page .main-offset > .section:first-child .grid-2 > :last-child > div {
