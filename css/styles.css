@@ -1486,7 +1486,7 @@ body:not(.home-page) .main-offset h1.text-3xl {
     object-position: 50% 45%;
   }
 
-  .hero-title { font-size: 2.8rem; }
+  .hero-title { font-size: clamp(2rem, 3.2vw, 2.8rem); }
   .logo-img { height: 77px; }
   .navbar-inner { padding: 0 var(--page-gutter); }
   .hero-btn { font-size: 1rem; }
@@ -1772,6 +1772,15 @@ body:not(.home-page) .main-offset h1.text-3xl {
 }
 
 @media (min-width: 990px) {
+  .hero-title {
+    white-space: nowrap;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    line-height: 1.1;
+  }
+
   .contact-page .main-offset > .section:first-child .grid-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: var(--content-grid-gap);
