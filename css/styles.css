@@ -23,7 +23,7 @@
   --page-gutter: clamp(20px, 6vw, 84px);
   --layout-column-gap: clamp(1.5rem, 3vw, 3.5rem);
   --content-grid-gap: clamp(1.75rem, 3vw, 3.25rem);
-  --guiding-focus-x: 50%;
+  --guiding-focus-x: 31%;
   --guiding-focus-y: 56%;
   --about-focus-x: 46%;
   --about-focus-y: 50%;
@@ -1189,7 +1189,7 @@ button {
 }
 
 .home-page #services .group:first-child .aspect-locked {
-  object-position: 50% 50%;
+  object-position: 45% 50%;
 }
 
 .home-page #services .group:last-child .aspect-locked {
@@ -1520,11 +1520,13 @@ body:not(.home-page) .main-offset h1.text-3xl {
   }
 
   .home-page #services .group:first-child .aspect-locked {
-    object-position: 50% 50%;
+    aspect-ratio: auto;
+    height: auto;
+    object-position: 45% 50%;
   }
 
   .home-page #services .group:last-child .aspect-locked {
-    object-position: 79% 50%;
+    object-position: 50% 50%;
   }
 
   .section {
