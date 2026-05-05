@@ -162,7 +162,15 @@
       "publisher": {
         "@id": "https://boatiquemarine.com/#organization"
       },
-      "inLanguage": "en"
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://boatiquemarine.com/?search={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
     },
     {
       "@type": "ProfessionalService",
@@ -222,9 +230,9 @@
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
       <div class="nav-links">
-        <a href="./about.html" class="nav-link" data-page="about">About</a>
-        <a href="./services.html" class="nav-link" data-page="services">Services</a>
-        <a href="./contact.html" class="nav-link" data-page="contact">Contact</a>
+        <a href="./about.html" class="nav-link" data-page="about">About Us</a>
+        <a href="./services.html" class="nav-link" data-page="services">Our Services</a>
+        <a href="./contact.html" class="nav-link" data-page="contact">Contact Us</a>
       </div>
       <a href="./index.html" class="logo-box flex-shrink-0">
         <img src="./images/logo-white.webp" alt="Boatique Marine" class="logo-img" width="648" height="225"
@@ -247,9 +255,9 @@
   <!-- Full Screen Mobile Menu -->
   <div class="mobile-nav" id="mobile-nav">
     <div class="mobile-nav-content">
-      <a href="./about.html" class="mobile-nav-link" data-page="about">About</a>
-      <a href="./services.html" class="mobile-nav-link" data-page="services">Services</a>
-      <a href="./contact.html" class="mobile-nav-link" data-page="contact">Contact</a>
+      <a href="./about.html" class="mobile-nav-link" data-page="about">About Us</a>
+      <a href="./services.html" class="mobile-nav-link" data-page="services">Our Services</a>
+      <a href="./contact.html" class="mobile-nav-link" data-page="contact">Contact Us</a>
     </div>
   </div>
 
@@ -433,7 +441,7 @@
           <p class="footer-text">Mosman 2088,<br>Sydney, Australia</p>
         </div>
         <div class="animate-on-scroll" data-animate="fade-in-up" data-delay="200">
-          <h4 class="footer-heading">Contact</h4>
+          <h4 class="footer-heading">Contact Us</h4>
           <div class="footer-text">
             <p>Sean Bennett</p>
             <a href="mailto:info@boatiquemarine.com" class="footer-link">info@boatiquemarine.com</a>
